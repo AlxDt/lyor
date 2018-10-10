@@ -1,4 +1,4 @@
-package Controller.Screen.Screens;
+package Controller.Screen.Screens.Admin;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,7 +26,7 @@ import javafx.stage.Stage;
  *
  * @author user
  */
-public class AdminInterfaceController implements Initializable {
+public class AdminController implements Initializable {
 
     // Represents the table of the residency logs
     @FXML
@@ -74,7 +74,7 @@ public class AdminInterfaceController implements Initializable {
             StageController.style(scene);
 
             // Extract the controller from the FXML
-            ResidenceReportInterfaceController residenceReportInterface
+            ResidenceReportController residenceReportInterface
                     = loader.getController();
 
             Stage residenceReportStage = new Stage();
@@ -117,7 +117,7 @@ public class AdminInterfaceController implements Initializable {
             StageController.style(scene);
 
             // Extract the controller from the FXML
-            AddResidentInterfaceController addResidentInterfaceController
+            AddResidentController addResidentInterfaceController
                     = loader.getController();
 
             Stage addResidentStage = new Stage();
@@ -132,6 +132,98 @@ public class AdminInterfaceController implements Initializable {
             addResidentInterfaceController.setParameters(addResidentStage);
 
             addResidentStage.showAndWait();
+        } catch (Exception ex) {
+            AlertController.showAlert("Error",
+                    "Could not load resources",
+                    "The application could not load the required"
+                    + " internal resources.",
+                    Alert.AlertType.ERROR,
+                    ex
+            );
+        }
+    }
+
+    // Activated when the user clicks the edit selected resident button
+    @FXML
+    private void editResidentAction() {
+        // Display the edit resident window
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource(
+                            "/View/Interface/Admin/"
+                            + "EditResidentInterface.fxml"
+                    )
+            );
+
+            GridPane window = loader.load();
+
+            Scene scene = new Scene(window);
+
+            // Style the scene
+            StageController.style(scene);
+
+            // Extract the controller from the FXML
+            EditResidentController editResidentInterfaceController
+                    = loader.getController();
+
+            Stage editResidentStage = new Stage();
+
+            // Window settings
+            editResidentStage.setTitle("Edit selected resident");
+            editResidentStage.setResizable(false);
+            editResidentStage.setScene(scene);
+            editResidentStage.initModality(Modality.APPLICATION_MODAL);
+
+            // Set the parameters of this window
+            editResidentInterfaceController.setParameters(editResidentStage);
+
+            editResidentStage.showAndWait();
+        } catch (Exception ex) {
+            AlertController.showAlert("Error",
+                    "Could not load resources",
+                    "The application could not load the required"
+                    + " internal resources.",
+                    Alert.AlertType.ERROR,
+                    ex
+            );
+        }
+    }
+
+    // Activated when the user clicks the set resident status button
+    @FXML
+    private void setResidentStatusAction() {
+        // Display the set resident window
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource(
+                            "/View/Interface/Admin/"
+                            + "SetResidentStatusInterface.fxml"
+                    )
+            );
+
+            GridPane window = loader.load();
+
+            Scene scene = new Scene(window);
+
+            // Style the scene
+            StageController.style(scene);
+
+            // Extract the controller from the FXML
+            SetResidentStatusController residentStatusController
+                    = loader.getController();
+
+            Stage editStatusStage = new Stage();
+
+            // Window settings
+            editStatusStage.setTitle("Edit status of selected resident");
+            editStatusStage.setResizable(false);
+            editStatusStage.setScene(scene);
+            editStatusStage.initModality(Modality.APPLICATION_MODAL);
+
+            // Set the parameters of this window
+            residentStatusController.setParameters(editStatusStage);
+
+            editStatusStage.showAndWait();
         } catch (Exception ex) {
             AlertController.showAlert("Error",
                     "Could not load resources",

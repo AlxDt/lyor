@@ -1,10 +1,11 @@
-package Controller.Screen.Screens;
+package Controller.Screen.Screens.Resident;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import Controller.Screen.Screens.Admin.AdminController;
 import Controller.Dialog.AlertController;
 import Controller.Screen.Stage.StageController;
 import java.net.URL;
@@ -22,7 +23,7 @@ import javafx.stage.Stage;
  *
  * @author user
  */
-public class LoginInterfaceController implements Initializable {
+public class LoginController implements Initializable {
 
     // The owner stage of this window
     private Stage stage;
@@ -72,7 +73,7 @@ public class LoginInterfaceController implements Initializable {
                 );
 
                 // Extract the controller from the FXML
-                AdminInterfaceController adminInterfaceController
+                AdminController adminInterfaceController
                         = loader.getController();
 
                 StageController.addScreen("residency-logs-admin", scene);

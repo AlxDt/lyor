@@ -1,4 +1,4 @@
-package Controller.Screen.Screens;
+package Controller.Screen.Screens.Admin;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -6,6 +6,7 @@ package Controller.Screen.Screens;
  * and open the template in the editor.
  */
 import Controller.Dialog.AlertController;
+import Controller.Screen.Screens.Resident.LoginController;
 import Controller.Screen.Stage.StageController;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +25,7 @@ import javafx.stage.Stage;
  *
  * @author user
  */
-public class ResidenceReportInterfaceController implements Initializable {
+public class ResidenceReportController implements Initializable {
 
     // Represents the table of the residency logs
     @FXML
@@ -58,7 +59,7 @@ public class ResidenceReportInterfaceController implements Initializable {
             StageController.style(scene);
 
             // Extract the controller from the FXML
-            LoginInterfaceController loginInterfaceController
+            LoginController loginInterfaceController
                     = loader.getController();
 
             Stage loginStage = new Stage();
