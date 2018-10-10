@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Screen.Screens.LoginInterfaceController">
+   <top>
+      <StackPane prefHeight="70.0" prefWidth="810.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcWidth="5.0" fill="#43a047" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="323.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Rectangle>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Enter the administrator password" />
+         </children>
+      </StackPane>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <PasswordField fx:id="passwordField" alignment="CENTER" onAction="#attemptLoginAction" />
+            <Button mnemonicParsing="false" onAction="#attemptLoginAction" text="Log in">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
